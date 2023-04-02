@@ -35,6 +35,9 @@ bool polinom::monom::operator<=(const monom& m) {
 }
 
 polinom::monom& polinom::monom::operator=(const monom& m) {
+	if (this == &m) {
+		return *this;
+	}
 	coef = m.coef;
 	degree = m.degree;
 	return *this;
@@ -94,6 +97,9 @@ polinom::polinom(const polinom& p) {
 }
 
 polinom& polinom::operator=(const polinom& p) {  
+	if (this == &p) {
+		return *this;
+	}
 	polinom result(p);
 	return result;
 }

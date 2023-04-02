@@ -45,6 +45,9 @@ public:
 	}
 
 	TList& operator=(const TList& l) {
+		if (this == &l) {
+			return *this;
+		}
 		size = l.size;
 		node* cur = head;
 		node* tmp;
