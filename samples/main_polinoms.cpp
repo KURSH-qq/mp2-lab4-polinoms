@@ -7,8 +7,6 @@ using namespace std;
 
 int main()
 {
-	//polinom p1("1 123+-5.5 101");
-	//polinom p2("2.4 100+3.3 201");
 	
 	int choise;
 	polinom p1;
@@ -20,7 +18,7 @@ int main()
 		mulptiplication,
 		multiplication_with_num
 	};
-	setlocale(0, "");
+	setlocale(LC_ALL, "Russian");
 	cout << "пример ввода полинома 1*123+-3*321" << endl;
 	cout << "полином вводится без пробелов, степени записываются без переменных," << endl;
 	cout << "при отрицательном значении коэфициента плюс перед мономом тоже пишется" << endl;
