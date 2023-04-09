@@ -43,6 +43,7 @@ private:
 
 	inline void add( const monom& m);
 	void merge();
+	void parse(string s);
 
 public:
 	polinom();
@@ -69,6 +70,12 @@ public:
 		}
 		ostr << endl;
 		return ostr;
+	}
+	friend istream& operator>>(istream& istr, polinom& p) {
+		string input;
+		istr >> input;
+		p.parse(input);
+		return istr;
 	}
 
 	~polinom() = default;

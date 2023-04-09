@@ -104,17 +104,17 @@ polinom& polinom::operator=(const polinom& p) {
 	return result;
 }
 
-polinom::polinom(string s) {
+void polinom::parse(string s) {
 	int sz = s.size();
 	int space_index = 0;
 	int plus_index = -1;
 	std::string cur_coef;
 	std::string cur_degree;
 	int j = 0;
-	for (int i = 0; i< sz; i++) {
-		if (s[i] == ' ') {
+	for (int i = 0; i < sz; i++) {
+		if (s[i] == '*') {
 			space_index = i;
-			j = plus_index+1;
+			j = plus_index + 1;
 			while (j != space_index) {
 				cur_coef += s[j];
 				j += 1;
@@ -128,11 +128,11 @@ polinom::polinom(string s) {
 				data.push(monom(std::stod(cur_coef), std::stod(cur_degree)));
 				cur_coef.clear();
 				cur_degree.clear();
-			}		
+			}
 		}
-		else if (s[i] == '+') {  
+		else if (s[i] == '+') {
 			plus_index = i;
-			j = space_index+1;
+			j = space_index + 1;
 			while (j != plus_index) {
 				cur_degree += s[j];
 				j += 1;
@@ -142,7 +142,11 @@ polinom::polinom(string s) {
 			cur_degree.clear();
 		}
 	}
+}
 
+polinom::polinom(string s) {
+	
+	parse(s);
 	merge();
 
 	size = data.getSize();
