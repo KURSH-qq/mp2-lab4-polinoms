@@ -18,22 +18,22 @@ int main()
 		mulptiplication,
 		multiplication_with_num
 	};
-	setlocale(LC_ALL, "Russian");
-	cout << "пример ввода полинома 1*123+-3*321" << endl;
-	cout << "полином вводится без пробелов, степени записываются без переменных," << endl;
-	cout << "при отрицательном значении коэфициента плюс перед мономом тоже пишется" << endl;
-	cout << "введите первый полином" << endl;
+	
+	cout << "enter polinom like this: 1*123+-3*321" << endl;
+	cout << "the polinom is entered without spaces, the degrees are written without variables," << endl;
+	cout << "with a negative value of the coefficient plus is also written before monom" << endl;
+	cout << "enter first polinom" << endl;
 	cin >> p1;
 	cout << p1 << endl;
-	cout << "введите второй полином" << endl;
+	cout << "enter second polinom" << endl;
 	cin >> p2;
 	cout << p2 << endl;
-	cout << "введите операцию" << endl;
-	cout << "доступные операции:" << endl;
-	cout << "1 - сложение полиномов" << endl;
-	cout << "2 - вычитание полиномов" << endl;
-	cout << "3 - умножение полинома на полином" << endl;
-	cout << "4 - умножение полинома на число" << endl;
+	cout << "enter operation" << endl;
+	cout << "available operation:" << endl;
+	cout << "1 - addition of polinoms" << endl;
+	cout << "2 - subtraction of polinoms" << endl;
+	cout << "3 - multiplication with polinom" << endl;
+	cout << "4 - multiplacation with num" << endl;
 	cin >> choise;
 	switch (choise) {
 	case addition:
@@ -55,7 +55,7 @@ int main()
 	case multiplication_with_num:
 	{
 		double num;
-		cout << "введите число для умножения" << endl;
+		cout << "enter num for multiplication" << endl;
 		cin >> num;
 		cout << p1 * num << endl;
 		cout << p2 * num << endl;
@@ -63,13 +63,6 @@ int main()
 	}
 		
 	}
-	/*
-	polinom p1("1*101");
-	polinom p2("3*311");
-	cout << p1 * p2 << endl;
-	
-	*/
-	
 }
 
 
