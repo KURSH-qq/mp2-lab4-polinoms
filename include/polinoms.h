@@ -11,7 +11,7 @@ private:
 		double coef;
 
 		monom(double _coef, int _degree): coef(_coef), degree(_degree){
-			if (degree>999 || calculateDegree(degree) > 10 || calculateDegree(degree) < 0  ) {
+			if (degree>999 || calculateDegree(degree) > 27 || calculateDegree(degree) < 0  ) {
 				throw exception("wrond degree");
 			}
 		}
@@ -75,6 +75,7 @@ public:
 		string input;
 		istr >> input;
 		p.parse(input);
+		p.merge();
 		return istr;
 	}
 

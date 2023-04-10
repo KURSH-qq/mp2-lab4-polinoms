@@ -57,7 +57,7 @@ polinom::monom polinom::monom::operator+(const monom& m) {
 polinom::monom polinom::monom::operator*(const monom& m) { 
 	monom result(*this);
 	
-	if ( result.degree+m.degree>= 1000 || calculateDegree(result.degree+m.degree)>9 ) { 
+	if ( result.degree+m.degree>= 1000 || calculateDegree(result.degree+m.degree)>27 ) { 
 		throw exception("wrong degree");
 	}
 	result.coef *= m.coef;
@@ -153,11 +153,13 @@ polinom::polinom(string s) {
 }
 
 void polinom::merge() {
+	
 	for (int i = 0; i < data.getSize(); i++) {
-		for (int j = i + 1; j < data.getSize(); j++) {
+		for (int j = i+1; j < data.getSize(); j++) {
 			if (data[i] == data[j]) {
-				data[i] = data[i]+ data[j];
+				data[i] = data[i] + data[j];
 				data.pop(j);
+				j -= 1;
 			}
 		}
 	}

@@ -7,10 +7,10 @@ using namespace std;
 
 int main()
 {
-	
 	int choise;
 	polinom p1;
 	polinom p2;
+
 	enum operations
 	{
 		addition = 1,
